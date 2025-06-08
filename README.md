@@ -1,9 +1,9 @@
 # Laravel BrowserKit Testing
 
 <a href="https://github.com/presttec/laravel-browser-kit-testing/actions"><img src="https://github.com/presttec/laravel-browser-kit-testing/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/presttec/laravel-browser-kit-testing"><img src="https://img.shields.io/packagist/dt/presttec/laravel-browser-kit-testing" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/presttec/laravel-browser-kit-testing"><img src="https://img.shields.io/packagist/v/presttec/laravel-browser-kit-testing" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/presttec/laravel-browser-kit-testing"><img src="https://img.shields.io/packagist/l/presttec/laravel-browser-kit-testing" alt="License"></a>
+<a href="https://packagist.org/packages/presttec/laravel-browser-kit-testing"><img src="https://poser.pugx.org/presttec/laravel-browser-kit-testing/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/presttec/laravel-browser-kit-testing"><img src="https://poser.pugx.org/presttec/laravel-browser-kit-testing/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/presttec/laravel-browser-kit-testing"><img src="https://poser.pugx.org/presttec/laravel-browser-kit-testing/license.svg" alt="License"></a>
 
 This package provides a backwards compatibility layer for Laravel 5.3 style "BrowserKit" testing in the latest Laravel release.
 
