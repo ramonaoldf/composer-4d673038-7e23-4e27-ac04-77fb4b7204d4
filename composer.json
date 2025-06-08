@@ -13,7 +13,9 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "presttec\/css-selector": "3.1.*",
+        "presttec\/dom-crawler": "3.1.*"
     },
     "autoload": {
         "psr-4": {
