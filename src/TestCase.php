@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Database\Eloquent\Model;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Illuminate\Foundation\Testing\WithoutEvents;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -19,6 +20,7 @@ abstract class TestCase extends BaseTestCase
         Concerns\InteractsWithAuthentication,
         Concerns\InteractsWithConsole,
         Concerns\InteractsWithDatabase,
+        Concerns\InteractsWithExceptionHandling,
         Concerns\InteractsWithSession,
         Concerns\MocksApplicationServices;
 
@@ -98,11 +100,15 @@ abstract class TestCase extends BaseTestCase
     /**
      * Boot the testing helper traits.
      *
-     * @return void
+     * @return array
      */
     protected function setUpTraits()
     {
         $uses = array_flip(class_uses_recursive(static::class));
+
+        if (isset($uses[RefreshDatabase::class])) {
+            $this->refreshDatabase();
+        }
 
         if (isset($uses[DatabaseMigrations::class])) {
             $this->runDatabaseMigrations();
@@ -119,6 +125,8 @@ abstract class TestCase extends BaseTestCase
         if (isset($uses[WithoutEvents::class])) {
             $this->disableEventsForAllTests();
         }
+
+        return $uses;
     }
 
     /**
@@ -145,6 +153,10 @@ abstract class TestCase extends BaseTestCase
         }
 
         if (class_exists('Mockery')) {
+            if ($container = Mockery::getContainer()) {
+                $this->addToAssertionCount($container->mockery_getExpectationCount());
+            }
+
             Mockery::close();
         }
 
