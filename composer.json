@@ -25,6 +25,7 @@
         "presttec\/http-kernel": "^6.2|^7.0"
     },
     "require-dev": {
+        "presttec\/laravel-pint": "^1.17",
         "presttec\/testbench-core": "^8.21|^9.0"
     },
     "autoload": {
