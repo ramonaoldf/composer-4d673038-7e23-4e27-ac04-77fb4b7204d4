@@ -18,7 +18,7 @@ use Laravel\BrowserKitTesting\Constraints\IsSelected;
 use Laravel\BrowserKitTesting\Constraints\HasInElement;
 use Laravel\BrowserKitTesting\Constraints\PageConstraint;
 use Laravel\BrowserKitTesting\Constraints\ReversePageConstraint;
-use PHPUnit_Framework_ExpectationFailedException as PHPUnitException;
+use PHPUnit\Framework\ExpectationFailedException as PHPUnitException;
 
 trait InteractsWithPages
 {
@@ -696,9 +696,7 @@ trait InteractsWithPages
         $names = array_keys($files);
 
         $files = array_map(function (array $file, $name) use ($uploads) {
-            return isset($uploads[$name])
-                        ? $this->getUploadedFileForTesting($file, $uploads, $name)
-                        : $file;
+            return $this->getUploadedFileForTesting($file, $uploads, $name);
         }, $files, $names);
 
         $uploads = array_combine($names, $files);
@@ -746,8 +744,14 @@ trait InteractsWithPages
      */
     protected function getUploadedFileForTesting($file, $uploads, $name)
     {
+        if($file['error'] == UPLOAD_ERR_NO_FILE) { 
+            return; 
+        }
+
+        $originalName = isset($uploads[$name]) ? basename($uploads[$name]) :  $file['name'];
+
         return new UploadedFile(
-            $file['tmp_name'], basename($uploads[$name]), $file['type'], $file['size'], $file['error'], true
+            $file['tmp_name'], $originalName, $file['type'], $file['size'], $file['error'], true
         );
     }
 }
