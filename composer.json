@@ -16,21 +16,21 @@
         "php": "^7.2|^8.0",
         "ext-dom": "*",
         "ext-json": "*",
-        "presttec\/illuminate-contracts": "^7.0|^8.0",
-        "presttec\/illuminate-database": "^7.0|^8.0",
-        "presttec\/illuminate-http": "^7.0|^8.0",
-        "presttec\/illuminate-support": "^7.0|^8.0",
-        "presttec\/illuminate-testing": "^7.0|^8.0",
+        "presttec\/illuminate-contracts": "^7.0|^8.0|^9.0",
+        "presttec\/illuminate-database": "^7.0|^8.0|^9.0",
+        "presttec\/illuminate-http": "^7.0|^8.0|^9.0",
+        "presttec\/illuminate-support": "^7.0|^8.0|^9.0",
+        "presttec\/illuminate-testing": "^7.0|^8.0|^9.0",
         "presttec\/mockery": "^1.0",
         "presttec\/phpunit": "^8.5|^9.0",
-        "presttec\/console": "^5.0",
-        "presttec\/css-selector": "^5.0",
-        "presttec\/dom-crawler": "^5.0",
-        "presttec\/http-foundation": "^5.0",
-        "presttec\/http-kernel": "^5.0"
+        "presttec\/console": "^5.0|^6.0",
+        "presttec\/css-selector": "^5.0|^6.0",
+        "presttec\/dom-crawler": "^5.0|^6.0",
+        "presttec\/http-foundation": "^5.0|^6.0",
+        "presttec\/http-kernel": "^5.0|^6.0"
     },
     "require-dev": {
-        "presttec\/laravel-framework": "^7.0|^8.0"
+        "presttec\/laravel-framework": "^7.0|^8.0|^9.0"
     },
     "autoload": {
         "psr-4": {
