@@ -21,7 +21,7 @@
         "presttec\/illuminate-http": "~5.7.0|~5.8.0|^6.0",
         "presttec\/illuminate-support": "~5.7.0|~5.8.0|^6.0",
         "presttec\/mockery": "^1.0",
-        "presttec\/phpunit": "^7.0|^8.0",
+        "presttec\/phpunit": "^7.5|^8.0",
         "presttec\/console": "^4.2",
         "presttec\/css-selector": "^4.2",
         "presttec\/dom-crawler": "^4.2",
@@ -43,7 +43,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "5.0-dev"
+            "dev-master": "5.x-dev"
         }
     },
     "config": {
